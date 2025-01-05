@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+option java_package = "org.example.domainservice";
+option java_multiple_files = true;
+option java_outer_classname = "EmployeeProto";
+
+package org.example.domainservice;
+
+service EmployeeService {
+  rpc GetEmployee (GetEmployeeRequest) returns (EmployeeResponse);
+  rpc CreateEmployee (CreateEmployeeRequest) returns (CreateEmployeeResponse);
+  rpc UpdateEmployee (UpdateEmployeeRequest) returns (UpdateEmployeeResponse);
+  rpc DeleteEmployee (DeleteEmployeeRequest) returns (DeleteEmployeeResponse);
+  rpc GetAllEmployees (GetAllEmployeesRequest) returns (GetAllEmployeesResponse);
+}
+message GetEmployeeRequest {
+  int64 id = 1;
+}
+message GetAllEmployeesRequest {
+}
+message GetAllEmployeesResponse {
+  repeated EmployeeResponse employees = 1;
+}
+message EmployeeResponse {
+  int64 id = 1;
+  string name = 2;
+  string position = 3;
+  double salary = 4;
+  string hireDate = 5;
+}
+message CreateEmployeeRequest {
+  string name = 1;
+  string position = 2;
+  double salary = 3;
+  string hireDate = 4;
+}
+message CreateEmployeeResponse {
+  int64 id = 1;
+}
+message UpdateEmployeeRequest {
+  int64 id = 1;
+  string name = 2;
+  string position = 3;
+  double salary = 4;
+  string hireDate = 5;
+}
+message UpdateEmployeeResponse {
+  bool success = 1;
+}
+message DeleteEmployeeRequest {
+  int64 id = 1;
+}
+message DeleteEmployeeResponse {
+  bool success = 1;
+}
