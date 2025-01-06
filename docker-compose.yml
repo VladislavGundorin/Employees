@@ -12,6 +12,7 @@ services:
     depends_on:
       - domain-service
       - rabbitmq
+      - redis
     environment:
       - grpc.server.host=domain-service
       - grpc.server.port=9091
@@ -19,6 +20,13 @@ services:
       - spring.rabbitmq.port=5672
       - spring.rabbitmq.username=admin
       - spring.rabbitmq.password=password
+      - spring.data.redis.host=redis
+      - spring.data.redis.port=6379
+      - logging.file.name=/app/logs/gateway.log  # Добавляем путь к логам
+      - logging.level.root=INFO
+      - logging.level.org.example=DEBUG
+    volumes:
+      - ./gateway-service/logs:/app/logs  # Добавляем монтирование логов
     networks:
       - app-network
     healthcheck:
@@ -52,13 +60,29 @@ services:
     networks:
       - app-network
 
+  # Redis Service
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   # RabbitMQ Service
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
     ports:
-      - "5672:5672"   # AMQP порт
-      - "15672:15672" # порт управления
+      - "5672:5672"
+      - "15672:15672"
     environment:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=password
@@ -110,3 +134,4 @@ networks:
 
 volumes:
   postgres-data:
+  redis-data:
