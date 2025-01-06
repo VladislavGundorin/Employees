@@ -47,3 +47,229 @@
 2025-01-06 13:44:08 [http-nio-8080-exec-5] INFO  o.example.service.RedisCacheService - CACHE HIT - Retrieved all employees from Redis cache. Count: 10
 2025-01-06 13:44:08 [http-nio-8080-exec-5] INFO  o.e.c.EmployeeGatewayController - Returning 10 employees from cache
 2025-01-06 13:45:35 [SpringApplicationShutdownHook] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Stopped RedisMessageListenerContainer
+2025-01-06 16:50:44 [main] INFO  o.example.GatewayServiceApplication - Starting GatewayServiceApplication using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-01-06 16:50:44 [main] DEBUG o.example.GatewayServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-01-06 16:50:44 [main] INFO  o.example.GatewayServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-06 16:50:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-06 16:50:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-06 16:50:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 0 Redis repository interfaces.
+2025-01-06 16:50:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-06 16:50:47 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-06 16:50:47 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-01-06 16:50:47 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-06 16:50:47 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2805 ms
+2025-01-06 16:50:50 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Starting RedisMessageListenerContainer...
+2025-01-06 16:50:50 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Postpone listening for Redis messages until actual listeners are added
+2025-01-06 16:50:50 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-01-06 16:50:50 [main] INFO  o.example.GatewayServiceApplication - Started GatewayServiceApplication in 9.057 seconds (process running for 10.658)
+2025-01-06 16:54:52 [SpringApplicationShutdownHook] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Stopped RedisMessageListenerContainer
+2025-01-06 16:56:44 [main] INFO  o.example.GatewayServiceApplication - Starting GatewayServiceApplication using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-01-06 16:56:44 [main] DEBUG o.example.GatewayServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-01-06 16:56:44 [main] INFO  o.example.GatewayServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-06 16:56:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-06 16:56:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-06 16:56:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 137 ms. Found 0 Redis repository interfaces.
+2025-01-06 16:56:53 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-06 16:56:53 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-06 16:56:53 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-01-06 16:56:53 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-06 16:56:53 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 9057 ms
+2025-01-06 16:56:58 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Starting RedisMessageListenerContainer...
+2025-01-06 16:56:58 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Postpone listening for Redis messages until actual listeners are added
+2025-01-06 16:56:58 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-01-06 16:56:58 [main] INFO  o.example.GatewayServiceApplication - Started GatewayServiceApplication in 18.692 seconds (process running for 19.899)
+2025-01-06 17:09:21 [SpringApplicationShutdownHook] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Stopped RedisMessageListenerContainer
+2025-01-06 17:17:43 [main] INFO  o.example.GatewayServiceApplication - Starting GatewayServiceApplication using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-01-06 17:17:43 [main] DEBUG o.example.GatewayServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-01-06 17:17:43 [main] INFO  o.example.GatewayServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-06 17:17:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-06 17:17:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-06 17:17:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 0 Redis repository interfaces.
+2025-01-06 17:17:45 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-06 17:17:45 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-06 17:17:45 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-01-06 17:17:45 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-06 17:17:45 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2577 ms
+2025-01-06 17:17:48 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Starting RedisMessageListenerContainer...
+2025-01-06 17:17:48 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Postpone listening for Redis messages until actual listeners are added
+2025-01-06 17:17:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-01-06 17:17:48 [main] INFO  o.example.GatewayServiceApplication - Started GatewayServiceApplication in 10.678 seconds (process running for 12.199)
+2025-01-06 17:22:57 [SpringApplicationShutdownHook] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Stopped RedisMessageListenerContainer
+2025-01-06 17:25:52 [main] INFO  o.example.GatewayServiceApplication - Starting GatewayServiceApplication using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-01-06 17:25:52 [main] DEBUG o.example.GatewayServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-01-06 17:25:52 [main] INFO  o.example.GatewayServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-06 17:25:57 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-06 17:25:57 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-06 17:25:57 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 113 ms. Found 0 Redis repository interfaces.
+2025-01-06 17:25:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-06 17:25:59 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-06 17:25:59 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-01-06 17:25:59 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-06 17:25:59 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6614 ms
+2025-01-06 17:26:02 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Starting RedisMessageListenerContainer...
+2025-01-06 17:26:02 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Postpone listening for Redis messages until actual listeners are added
+2025-01-06 17:26:02 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-01-06 17:26:02 [main] INFO  o.example.GatewayServiceApplication - Started GatewayServiceApplication in 12.788 seconds (process running for 13.293)
+2025-01-06 17:33:41 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-06 17:33:41 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-06 17:33:41 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 155 ms
+2025-01-06 17:33:42 [http-nio-8080-exec-2] INFO  o.e.c.EmployeeGatewayController - Request to get all employees
+2025-01-06 17:33:42 [http-nio-8080-exec-2] DEBUG o.example.service.RedisCacheService - Attempting to get all employees from cache
+2025-01-06 17:33:42 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 17:33:44 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 17:33:44 [http-nio-8080-exec-2] WARN  o.example.service.RedisCacheService - CACHE MISS - No employees found in Redis cache
+2025-01-06 17:33:50 [http-nio-8080-exec-2] DEBUG o.example.service.RedisCacheService - Attempting to cache all employees list
+2025-01-06 17:33:51 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 17:33:51 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 17:33:51 [http-nio-8080-exec-2] INFO  o.example.service.RedisCacheService - CACHE UPDATE - Successfully cached 10 employees in Redis
+2025-01-06 17:33:51 [http-nio-8080-exec-2] DEBUG o.example.service.RedisCacheService - Cached employees: [EmployeeDto{id=3, name='John', position='Software Engineer', salary=5000.75, hireDate=2023-01-01}, EmployeeDto{id=6, name='Акакий', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=7, name='Акакий_2', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=8, name='Акакий_3', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=10, name='Акакий_5', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=12, name='Акакий_7', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=13, name='Акакий_8', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=2, name='John Doe', position='Software Engineer', salary=500.75, hireDate=2023-01-01}, EmployeeDto{id=15, name='John Doe_10', position='Software Engineer', salary=500.75, hireDate=2023-01-01}, EmployeeDto{id=16, name='Bobik_popik', position='Engineer', salary=80000.75, hireDate=2021-01-01}]
+2025-01-06 17:45:19 [http-nio-8080-exec-4] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 8
+2025-01-06 17:45:19 [http-nio-8080-exec-4] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:8
+2025-01-06 17:45:19 [http-nio-8080-exec-4] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 17:45:20 [http-nio-8080-exec-4] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 17:45:20 [http-nio-8080-exec-4] INFO  o.example.service.RedisCacheService - CACHE MISS - Employee ID: 8 not found in Redis cache
+2025-01-06 17:45:22 [http-nio-8080-exec-4] DEBUG o.example.service.RedisCacheService - Attempting to cache employee with key: employee:8
+2025-01-06 17:45:22 [http-nio-8080-exec-4] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 17:45:22 [http-nio-8080-exec-4] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 17:45:22 [http-nio-8080-exec-4] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 17:45:22 [http-nio-8080-exec-4] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 17:45:22 [http-nio-8080-exec-4] INFO  o.example.service.RedisCacheService - CACHE UPDATE - Successfully cached employee ID: 8 in Redis
+2025-01-06 17:45:22 [http-nio-8080-exec-4] DEBUG o.example.service.RedisCacheService - Cached employee details: EmployeeDto{id=8, name='Акакий_3', position='Engineer', salary=80000.75, hireDate=2021-01-01}
+2025-01-06 17:51:11 [SpringApplicationShutdownHook] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Stopped RedisMessageListenerContainer
+2025-01-06 22:03:43 [main] INFO  o.example.GatewayServiceApplication - Starting GatewayServiceApplication using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-01-06 22:03:43 [main] DEBUG o.example.GatewayServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-01-06 22:03:43 [main] INFO  o.example.GatewayServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-06 22:03:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-06 22:03:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-06 22:03:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 128 ms. Found 0 Redis repository interfaces.
+2025-01-06 22:03:51 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-06 22:03:51 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-06 22:03:51 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-01-06 22:03:51 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-06 22:03:51 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7167 ms
+2025-01-06 22:03:55 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Starting RedisMessageListenerContainer...
+2025-01-06 22:03:55 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Postpone listening for Redis messages until actual listeners are added
+2025-01-06 22:03:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-01-06 22:03:55 [main] INFO  o.example.GatewayServiceApplication - Started GatewayServiceApplication in 19.141 seconds (process running for 24.362)
+2025-01-06 22:10:44 [SpringApplicationShutdownHook] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Stopped RedisMessageListenerContainer
+2025-01-06 22:35:05 [main] INFO  o.example.GatewayServiceApplication - Starting GatewayServiceApplication using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-01-06 22:35:05 [main] DEBUG o.example.GatewayServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-01-06 22:35:05 [main] INFO  o.example.GatewayServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-06 22:35:08 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-06 22:35:08 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-06 22:35:08 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 185 ms. Found 0 Redis repository interfaces.
+2025-01-06 22:35:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-06 22:35:10 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-06 22:35:10 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-01-06 22:35:10 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-06 22:35:10 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5181 ms
+2025-01-06 22:35:13 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Starting RedisMessageListenerContainer...
+2025-01-06 22:35:13 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Postpone listening for Redis messages until actual listeners are added
+2025-01-06 22:35:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-01-06 22:35:13 [main] INFO  o.example.GatewayServiceApplication - Started GatewayServiceApplication in 11.389 seconds (process running for 13.759)
+2025-01-06 22:36:16 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-06 22:36:16 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-06 22:36:16 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-01-06 22:36:16 [http-nio-8080-exec-2] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 8
+2025-01-06 22:36:16 [http-nio-8080-exec-2] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:8
+2025-01-06 22:36:16 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:36:17 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:36:17 [http-nio-8080-exec-2] INFO  o.example.service.RedisCacheService - CACHE MISS - Employee ID: 8 not found in Redis cache
+2025-01-06 22:36:17 [http-nio-8080-exec-2] INFO  org.example.grpc.EmployeeGrpcClient - Getting employee by ID: 8
+2025-01-06 22:36:19 [http-nio-8080-exec-2] DEBUG org.example.grpc.EmployeeGrpcClient - Successfully retrieved employee with ID: 8
+2025-01-06 22:36:19 [http-nio-8080-exec-2] DEBUG o.example.service.RedisCacheService - Attempting to cache employee with key: employee:8
+2025-01-06 22:36:19 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:36:19 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:36:19 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:36:20 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:36:20 [http-nio-8080-exec-2] INFO  o.example.service.RedisCacheService - CACHE UPDATE - Successfully cached employee ID: 8 in Redis
+2025-01-06 22:36:20 [http-nio-8080-exec-2] DEBUG o.example.service.RedisCacheService - Cached employee details: EmployeeDto{id=8, name='Акакий_3', position='Engineer', salary=80000.75, hireDate=2021-01-01}
+2025-01-06 22:37:35 [http-nio-8080-exec-5] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 8
+2025-01-06 22:37:35 [http-nio-8080-exec-5] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:8
+2025-01-06 22:37:35 [http-nio-8080-exec-5] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:37:35 [http-nio-8080-exec-5] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:37:35 [http-nio-8080-exec-5] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 8 from Redis cache
+2025-01-06 22:37:35 [http-nio-8080-exec-5] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=8, name=Акакий_3, position=Engineer, salary=80000.75, hireDate=2021-01-01}
+2025-01-06 22:37:35 [http-nio-8080-exec-5] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=8, name='Акакий_3', position='Engineer', salary=80000.75, hireDate=2021-01-01}
+2025-01-06 22:42:25 [http-nio-8080-exec-8] INFO  o.e.c.EmployeeGatewayController - Request to get all employees
+2025-01-06 22:42:25 [http-nio-8080-exec-8] DEBUG o.example.service.RedisCacheService - Attempting to get all employees from cache
+2025-01-06 22:42:25 [http-nio-8080-exec-8] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:42:25 [http-nio-8080-exec-8] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:42:25 [http-nio-8080-exec-8] WARN  o.example.service.RedisCacheService - CACHE MISS - No employees found in Redis cache
+2025-01-06 22:42:25 [http-nio-8080-exec-8] INFO  org.example.grpc.EmployeeGrpcClient - Getting all employees
+2025-01-06 22:42:27 [http-nio-8080-exec-8] DEBUG org.example.grpc.EmployeeGrpcClient - Retrieved 10 employees
+2025-01-06 22:42:27 [http-nio-8080-exec-8] DEBUG o.example.service.RedisCacheService - Attempting to cache all employees list
+2025-01-06 22:42:27 [http-nio-8080-exec-8] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:42:27 [http-nio-8080-exec-8] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:42:27 [http-nio-8080-exec-8] INFO  o.example.service.RedisCacheService - CACHE UPDATE - Successfully cached 10 employees in Redis
+2025-01-06 22:42:27 [http-nio-8080-exec-8] DEBUG o.example.service.RedisCacheService - Cached employees: [EmployeeDto{id=3, name='John', position='Software Engineer', salary=5000.75, hireDate=2023-01-01}, EmployeeDto{id=6, name='Акакий', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=7, name='Акакий_2', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=8, name='Акакий_3', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=10, name='Акакий_5', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=12, name='Акакий_7', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=13, name='Акакий_8', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=2, name='John Doe', position='Software Engineer', salary=500.75, hireDate=2023-01-01}, EmployeeDto{id=15, name='John Doe_10', position='Software Engineer', salary=500.75, hireDate=2023-01-01}, EmployeeDto{id=16, name='Bobik_popik', position='Engineer', salary=80000.75, hireDate=2021-01-01}]
+2025-01-06 22:42:27 [http-nio-8080-exec-8] INFO  o.e.c.EmployeeGatewayController - Caching 10 employees retrieved from gRPC
+2025-01-06 22:42:30 [http-nio-8080-exec-9] INFO  o.e.c.EmployeeGatewayController - Request to get all employees
+2025-01-06 22:42:30 [http-nio-8080-exec-9] DEBUG o.example.service.RedisCacheService - Attempting to get all employees from cache
+2025-01-06 22:42:30 [http-nio-8080-exec-9] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:42:30 [http-nio-8080-exec-9] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:42:30 [http-nio-8080-exec-9] INFO  o.example.service.RedisCacheService - CACHE HIT - Retrieved all employees from Redis cache. Count: 10
+2025-01-06 22:42:30 [http-nio-8080-exec-9] INFO  o.e.c.EmployeeGatewayController - Returning 10 employees from cache
+2025-01-06 22:43:06 [http-nio-8080-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' is not supported]
+2025-01-06 22:43:18 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unrecognized field "id" (class org.example.dto.NewEmployeeRequest), not marked as ignorable]
+2025-01-06 22:43:26 [http-nio-8080-exec-3] INFO  o.e.c.EmployeeGatewayController - Updating employee with ID: 3
+2025-01-06 22:43:26 [http-nio-8080-exec-3] INFO  org.example.service.RabbitMQSender - Sending message to RabbitMQ: UPDATE:3,John,Кочигар,5000.750000,2023-01-01
+2025-01-06 22:43:26 [http-nio-8080-exec-3] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [rabbitmq:5672]
+2025-01-06 22:43:27 [http-nio-8080-exec-3] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#1b31af02:0/SimpleConnection@322e0090 [delegate=amqp://admin@172.19.0.5:5672/, localPort=33796]
+2025-01-06 22:43:27 [http-nio-8080-exec-3] DEBUG org.example.service.RabbitMQSender - Message sent successfully
+2025-01-06 22:43:27 [http-nio-8080-exec-3] DEBUG o.example.service.RedisCacheService - Attempting to evict employee from cache, key: employee:3
+2025-01-06 22:43:27 [http-nio-8080-exec-3] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:43:27 [http-nio-8080-exec-3] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:43:27 [http-nio-8080-exec-3] INFO  o.example.service.RedisCacheService - CACHE MISS - No cache entry found for employee ID: 3
+2025-01-06 22:43:27 [http-nio-8080-exec-3] INFO  o.e.c.EmployeeGatewayController - Employee update request sent to RabbitMQ and cache invalidated for ID 3
+2025-01-06 22:45:59 [http-nio-8080-exec-6] INFO  o.e.c.EmployeeGatewayController - Deleting employee with ID: 3
+2025-01-06 22:45:59 [http-nio-8080-exec-6] INFO  org.example.service.RabbitMQSender - Sending message to RabbitMQ: DELETE:3
+2025-01-06 22:45:59 [http-nio-8080-exec-6] DEBUG org.example.service.RabbitMQSender - Message sent successfully
+2025-01-06 22:45:59 [http-nio-8080-exec-6] DEBUG o.example.service.RedisCacheService - Attempting to evict employee from cache, key: employee:3
+2025-01-06 22:45:59 [http-nio-8080-exec-6] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:45:59 [http-nio-8080-exec-6] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:45:59 [http-nio-8080-exec-6] INFO  o.example.service.RedisCacheService - CACHE MISS - No cache entry found for employee ID: 3
+2025-01-06 22:45:59 [http-nio-8080-exec-6] INFO  o.e.c.EmployeeGatewayController - Employee deletion request sent to RabbitMQ and cache invalidated for ID 3
+2025-01-06 22:46:56 [http-nio-8080-exec-7] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 3
+2025-01-06 22:46:56 [http-nio-8080-exec-7] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:3
+2025-01-06 22:46:56 [http-nio-8080-exec-7] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:46:56 [http-nio-8080-exec-7] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:46:56 [http-nio-8080-exec-7] INFO  o.example.service.RedisCacheService - CACHE MISS - Employee ID: 3 not found in Redis cache
+2025-01-06 22:46:56 [http-nio-8080-exec-7] INFO  org.example.grpc.EmployeeGrpcClient - Getting employee by ID: 3
+2025-01-06 22:46:56 [http-nio-8080-exec-7] DEBUG org.example.grpc.EmployeeGrpcClient - Employee not found with ID: 3
+2025-01-06 22:48:08 [http-nio-8080-exec-10] INFO  o.e.c.EmployeeGatewayController - Creating new employee: Гоша
+2025-01-06 22:48:08 [http-nio-8080-exec-10] INFO  org.example.service.RabbitMQSender - Sending message to RabbitMQ: CREATE:Гоша,Крановщик,155000.750000,2023-01-01
+2025-01-06 22:48:08 [http-nio-8080-exec-10] DEBUG org.example.service.RabbitMQSender - Message sent successfully
+2025-01-06 22:48:08 [http-nio-8080-exec-10] DEBUG o.example.service.RedisCacheService - Attempting to evict all employees from cache
+2025-01-06 22:48:08 [http-nio-8080-exec-10] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:48:08 [http-nio-8080-exec-10] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:48:08 [http-nio-8080-exec-10] INFO  o.example.service.RedisCacheService - CACHE EVICT - Successfully removed all employees from Redis cache
+2025-01-06 22:48:08 [http-nio-8080-exec-10] INFO  o.e.c.EmployeeGatewayController - Employee creation request sent to RabbitMQ and cache invalidated
+2025-01-06 22:48:56 [http-nio-8080-exec-1] INFO  o.e.c.EmployeeGatewayController - Request to get all employees
+2025-01-06 22:48:56 [http-nio-8080-exec-1] DEBUG o.example.service.RedisCacheService - Attempting to get all employees from cache
+2025-01-06 22:48:56 [http-nio-8080-exec-1] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:48:56 [http-nio-8080-exec-1] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:48:56 [http-nio-8080-exec-1] WARN  o.example.service.RedisCacheService - CACHE MISS - No employees found in Redis cache
+2025-01-06 22:48:56 [http-nio-8080-exec-1] INFO  org.example.grpc.EmployeeGrpcClient - Getting all employees
+2025-01-06 22:48:56 [http-nio-8080-exec-1] DEBUG org.example.grpc.EmployeeGrpcClient - Retrieved 10 employees
+2025-01-06 22:48:56 [http-nio-8080-exec-1] DEBUG o.example.service.RedisCacheService - Attempting to cache all employees list
+2025-01-06 22:48:56 [http-nio-8080-exec-1] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:48:56 [http-nio-8080-exec-1] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:48:56 [http-nio-8080-exec-1] INFO  o.example.service.RedisCacheService - CACHE UPDATE - Successfully cached 10 employees in Redis
+2025-01-06 22:48:56 [http-nio-8080-exec-1] DEBUG o.example.service.RedisCacheService - Cached employees: [EmployeeDto{id=6, name='Акакий', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=7, name='Акакий_2', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=8, name='Акакий_3', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=10, name='Акакий_5', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=12, name='Акакий_7', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=13, name='Акакий_8', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=2, name='John Doe', position='Software Engineer', salary=500.75, hireDate=2023-01-01}, EmployeeDto{id=15, name='John Doe_10', position='Software Engineer', salary=500.75, hireDate=2023-01-01}, EmployeeDto{id=16, name='Bobik_popik', position='Engineer', salary=80000.75, hireDate=2021-01-01}, EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}]
+2025-01-06 22:48:56 [http-nio-8080-exec-1] INFO  o.e.c.EmployeeGatewayController - Caching 10 employees retrieved from gRPC
+2025-01-06 22:49:03 [http-nio-8080-exec-2] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-06 22:49:03 [http-nio-8080-exec-2] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-06 22:49:03 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:49:03 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:49:03 [http-nio-8080-exec-2] INFO  o.example.service.RedisCacheService - CACHE MISS - Employee ID: 17 not found in Redis cache
+2025-01-06 22:49:03 [http-nio-8080-exec-2] INFO  org.example.grpc.EmployeeGrpcClient - Getting employee by ID: 17
+2025-01-06 22:49:03 [http-nio-8080-exec-2] DEBUG org.example.grpc.EmployeeGrpcClient - Successfully retrieved employee with ID: 17
+2025-01-06 22:49:03 [http-nio-8080-exec-2] DEBUG o.example.service.RedisCacheService - Attempting to cache employee with key: employee:17
+2025-01-06 22:49:03 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:49:03 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:49:03 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-06 22:49:03 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-06 22:49:03 [http-nio-8080-exec-2] INFO  o.example.service.RedisCacheService - CACHE UPDATE - Successfully cached employee ID: 17 in Redis
+2025-01-06 22:49:03 [http-nio-8080-exec-2] DEBUG o.example.service.RedisCacheService - Cached employee details: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-06 23:06:39 [SpringApplicationShutdownHook] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Stopped RedisMessageListenerContainer

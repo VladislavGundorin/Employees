@@ -13,6 +13,7 @@ services:
       - domain-service
       - rabbitmq
       - redis
+      - logstash  # Добавляем зависимость от logstash
     environment:
       - grpc.server.host=domain-service
       - grpc.server.port=9091
@@ -22,11 +23,11 @@ services:
       - spring.rabbitmq.password=password
       - spring.data.redis.host=redis
       - spring.data.redis.port=6379
-      - logging.file.name=/app/logs/gateway.log  # Добавляем путь к логам
+      - logging.file.name=/app/logs/gateway.log
       - logging.level.root=INFO
       - logging.level.org.example=DEBUG
     volumes:
-      - ./gateway-service/logs:/app/logs  # Добавляем монтирование логов
+      - ./gateway-service/logs:/app/logs
     networks:
       - app-network
     healthcheck:
@@ -34,6 +35,68 @@ services:
       interval: 30s
       timeout: 3s
       retries: 3
+
+  # OpenSearch (заменяет Elasticsearch)
+  opensearch:
+    image: opensearchproject/opensearch:2.10.0
+    container_name: opensearch
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "DISABLE_SECURITY_PLUGIN=true"  # Для удобства разработки
+      - "DISABLE_INSTALL_DEMO_CONFIG=true"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - opensearch-data:/usr/share/opensearch/data
+    ports:
+      - "9200:9200"
+      - "9600:9600"
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200/_cluster/health | grep -q 'status.*green'"]
+      interval: 30s
+      timeout: 30s
+      retries: 3
+
+  # Logstash
+  logstash:
+    image: opensearchproject/logstash-oss-with-opensearch-output-plugin:latest
+    container_name: logstash
+    volumes:
+      - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro
+    ports:
+      - "5044:5044"
+      - "5000:5000"
+    environment:
+      - "LS_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "OPENSEARCH_HOSTS=http://opensearch:9200"
+    deploy:
+      resources:
+        limits:
+          memory: 1g
+    networks:
+      - app-network
+    depends_on:
+      - opensearch
+
+  # Kibana (OpenSearch Dashboards)
+  kibana:
+    image: opensearchproject/opensearch-dashboards:2.10.0
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - 'OPENSEARCH_HOSTS=["http://opensearch:9200"]'
+      - "DISABLE_SECURITY_DASHBOARDS_PLUGIN=true"  # Для удобства разработки
+    networks:
+      - app-network
+    depends_on:
+      - opensearch
 
   # Domain Service
   domain-service:
@@ -135,3 +198,5 @@ networks:
 volumes:
   postgres-data:
   redis-data:
+  opensearch-data:
+
