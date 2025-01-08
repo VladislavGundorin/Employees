@@ -34,6 +34,7 @@ public class EmployeeGatewayController {
 
         EmployeeDto cachedEmployee = cacheService.getCachedEmployee(id);
         if (cachedEmployee != null) {
+            log.debug("Cache hit for employee ID: {}", id);
             return ResponseEntity.ok(cachedEmployee);
         }
 

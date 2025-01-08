@@ -57,18 +57,20 @@ public class RedisCacheService {
         log.debug("Attempting to cache employee with key: {}", key);
 
         try {
-            if (employeeRedisTemplate.hasKey(key)) {
-                log.info("CACHE EXISTS - Employee ID: {} already in Redis cache", id);
-                return;
-            }
             employeeRedisTemplate.opsForValue().set(key, employee, CACHE_TTL_HOURS, TimeUnit.HOURS);
             log.info("CACHE UPDATE - Successfully cached employee ID: {} in Redis", id);
             log.debug("Cached employee details: {}", employee);
+            log.debug("Cache TTL set to {} hours", CACHE_TTL_HOURS);
+
+            log.debug("Initiating update of all employees cache after individual employee cache");
+            updateAllEmployeesCache();
+            log.info("Cache operations completed for employee ID: {}", id);
         } catch (Exception e) {
-            log.error("Error caching employee ID: {}: {}", id, e.getMessage());
+            log.error("Error while caching employee ID: {}: {}", id, e.getMessage());
             log.debug("Error details:", e);
         }
     }
+
 
     public List<EmployeeDto> getCachedAllEmployees() {
         log.debug("Attempting to get all employees from cache");
@@ -108,6 +110,7 @@ public class RedisCacheService {
     public void evictEmployee(Long id) {
         String key = EMPLOYEE_CACHE_KEY_PREFIX + id;
         log.debug("Attempting to evict employee from cache, key: {}", key);
+
         try {
             Boolean deleted = employeeRedisTemplate.delete(key);
             if (Boolean.TRUE.equals(deleted)) {
@@ -115,6 +118,10 @@ public class RedisCacheService {
             } else {
                 log.info("CACHE MISS - No cache entry found for employee ID: {}", id);
             }
+
+            log.debug("Initiating eviction of all employees cache");
+            evictAllEmployees();
+            log.info("Cache eviction operations completed for employee ID: {}", id);
         } catch (Exception e) {
             log.error("Error evicting employee ID: {} from cache: {}", id, e.getMessage());
             log.debug("Error details:", e);
@@ -135,5 +142,7 @@ public class RedisCacheService {
             log.debug("Error details:", e);
         }
     }
-
+    private void updateAllEmployeesCache() {
+        evictAllEmployees();
+    }
 }
