@@ -1,0 +1,403 @@
+2025-01-07 14:52:53 [main] INFO  o.example.GatewayServiceApplication - Starting GatewayServiceApplication using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-01-07 14:52:53 [main] DEBUG o.example.GatewayServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-01-07 14:52:53 [main] INFO  o.example.GatewayServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-07 14:53:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-07 14:53:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-07 14:53:00 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 148 ms. Found 0 Redis repository interfaces.
+2025-01-07 14:53:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-07 14:53:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-07 14:53:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-01-07 14:53:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-07 14:53:06 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 13645 ms
+2025-01-07 14:53:10 [main] DEBUG i.m.c.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+2025-01-07 14:53:17 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Starting RedisMessageListenerContainer...
+2025-01-07 14:53:17 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Postpone listening for Redis messages until actual listeners are added
+2025-01-07 14:53:18 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-01-07 14:53:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-01-07 14:53:19 [main] INFO  o.example.GatewayServiceApplication - Started GatewayServiceApplication in 28.731 seconds (process running for 32.092)
+2025-01-07 14:55:18 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-07 14:55:18 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-07 14:55:18 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 95 ms
+2025-01-07 14:55:18 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 14:57:55 [http-nio-8080-exec-5] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 14:57:55 [http-nio-8080-exec-5] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 14:57:55 [http-nio-8080-exec-5] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 14:57:56 [http-nio-8080-exec-5] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 14:57:56 [http-nio-8080-exec-5] INFO  o.example.service.RedisCacheService - CACHE MISS - Employee ID: 17 not found in Redis cache
+2025-01-07 14:57:56 [http-nio-8080-exec-5] INFO  org.example.grpc.EmployeeGrpcClient - Getting employee by ID: 17
+2025-01-07 14:58:01 [http-nio-8080-exec-5] DEBUG org.example.grpc.EmployeeGrpcClient - Successfully retrieved employee with ID: 17
+2025-01-07 14:58:01 [http-nio-8080-exec-5] DEBUG o.example.service.RedisCacheService - Attempting to cache employee with key: employee:17
+2025-01-07 14:58:01 [http-nio-8080-exec-5] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 14:58:01 [http-nio-8080-exec-5] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 14:58:02 [http-nio-8080-exec-5] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 14:58:02 [http-nio-8080-exec-5] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 14:58:02 [http-nio-8080-exec-5] INFO  o.example.service.RedisCacheService - CACHE UPDATE - Successfully cached employee ID: 17 in Redis
+2025-01-07 14:58:02 [http-nio-8080-exec-5] DEBUG o.example.service.RedisCacheService - Cached employee details: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:02:10 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:03:32 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:06:39 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:08:03 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:13:04 [SpringApplicationShutdownHook] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Stopped RedisMessageListenerContainer
+2025-01-07 15:14:55 [main] INFO  o.example.GatewayServiceApplication - Starting GatewayServiceApplication using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-01-07 15:14:55 [main] DEBUG o.example.GatewayServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-01-07 15:14:55 [main] INFO  o.example.GatewayServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-07 15:14:58 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-07 15:14:58 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-07 15:14:58 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 54 ms. Found 0 Redis repository interfaces.
+2025-01-07 15:15:00 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-07 15:15:00 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-07 15:15:00 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-01-07 15:15:00 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-07 15:15:00 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4763 ms
+2025-01-07 15:15:02 [main] DEBUG i.m.c.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+2025-01-07 15:15:06 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Starting RedisMessageListenerContainer...
+2025-01-07 15:15:06 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Postpone listening for Redis messages until actual listeners are added
+2025-01-07 15:15:06 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-01-07 15:15:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-01-07 15:15:06 [main] INFO  o.example.GatewayServiceApplication - Started GatewayServiceApplication in 16.12 seconds (process running for 18.938)
+2025-01-07 15:15:10 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-07 15:15:10 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-07 15:15:10 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-01-07 15:15:10 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:15:14 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:15:19 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:15:22 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:15:24 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:15:29 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:15:34 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:15:39 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:15:43 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:15:48 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:15:53 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:15:58 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:16:03 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:16:08 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:16:12 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:16:17 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:16:22 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:16:27 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:16:32 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:16:37 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:16:41 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:16:46 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:16:51 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:16:56 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:17:01 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:17:06 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:17:10 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:17:15 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:17:20 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:17:25 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:17:30 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:17:35 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:17:40 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:17:45 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:17:50 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:17:55 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:18:00 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:18:05 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:18:09 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:18:14 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:18:19 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:18:24 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:18:29 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:18:34 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:18:38 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:18:43 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:18:48 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:18:53 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:18:58 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:19:03 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:19:07 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:19:12 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:19:17 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:19:22 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:19:27 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:19:32 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:19:36 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:19:41 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:19:46 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:19:51 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:19:56 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:19:59 [http-nio-8080-exec-4] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:19:59 [http-nio-8080-exec-4] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:19:59 [http-nio-8080-exec-4] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:20:00 [http-nio-8080-exec-4] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:20:00 [http-nio-8080-exec-4] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:20:00 [http-nio-8080-exec-4] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:20:00 [http-nio-8080-exec-4] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:20:01 [http-nio-8080-exec-5] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:20:01 [http-nio-8080-exec-5] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:20:01 [http-nio-8080-exec-5] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:20:01 [http-nio-8080-exec-5] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:20:01 [http-nio-8080-exec-5] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:20:01 [http-nio-8080-exec-5] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:20:01 [http-nio-8080-exec-5] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:20:01 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:20:02 [http-nio-8080-exec-7] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:20:02 [http-nio-8080-exec-7] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:20:02 [http-nio-8080-exec-7] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:20:02 [http-nio-8080-exec-7] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:20:02 [http-nio-8080-exec-7] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:20:02 [http-nio-8080-exec-7] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:20:02 [http-nio-8080-exec-7] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:20:03 [http-nio-8080-exec-8] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:20:03 [http-nio-8080-exec-8] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:20:03 [http-nio-8080-exec-8] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:20:03 [http-nio-8080-exec-8] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:20:03 [http-nio-8080-exec-8] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:20:03 [http-nio-8080-exec-8] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:20:03 [http-nio-8080-exec-8] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:20:04 [http-nio-8080-exec-9] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:20:04 [http-nio-8080-exec-9] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:20:04 [http-nio-8080-exec-9] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:20:04 [http-nio-8080-exec-9] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:20:04 [http-nio-8080-exec-9] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:20:04 [http-nio-8080-exec-9] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:20:04 [http-nio-8080-exec-9] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:20:05 [http-nio-8080-exec-10] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:20:05 [http-nio-8080-exec-10] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:20:05 [http-nio-8080-exec-10] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:20:05 [http-nio-8080-exec-10] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:20:05 [http-nio-8080-exec-10] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:20:05 [http-nio-8080-exec-10] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:20:05 [http-nio-8080-exec-10] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:20:05 [http-nio-8080-exec-1] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:20:05 [http-nio-8080-exec-1] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:20:05 [http-nio-8080-exec-1] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:20:05 [http-nio-8080-exec-1] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:20:05 [http-nio-8080-exec-1] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:20:05 [http-nio-8080-exec-1] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:20:05 [http-nio-8080-exec-1] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:20:05 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:20:10 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:20:15 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:20:20 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:20:25 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:20:30 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:20:35 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:20:40 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:20:45 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:20:50 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:20:55 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:21:00 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:21:04 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:21:09 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:21:14 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:21:19 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:21:24 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:21:29 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:21:33 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:21:38 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:21:43 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:21:48 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:21:53 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:21:58 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:22:02 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:22:07 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:22:12 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:22:17 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:22:22 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:22:27 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:22:31 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:22:36 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:22:41 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:22:46 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:22:51 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:22:56 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:23:00 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:23:05 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:23:10 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:23:16 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:23:20 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:23:25 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:23:30 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:23:34 [http-nio-8080-exec-7] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:23:34 [http-nio-8080-exec-7] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:23:34 [http-nio-8080-exec-7] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:23:34 [http-nio-8080-exec-7] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:23:34 [http-nio-8080-exec-7] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:23:34 [http-nio-8080-exec-7] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:34 [http-nio-8080-exec-7] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:35 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:23:35 [http-nio-8080-exec-9] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:23:35 [http-nio-8080-exec-9] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:23:35 [http-nio-8080-exec-9] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:23:35 [http-nio-8080-exec-9] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:23:35 [http-nio-8080-exec-9] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:23:35 [http-nio-8080-exec-9] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:35 [http-nio-8080-exec-9] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:36 [http-nio-8080-exec-10] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:23:36 [http-nio-8080-exec-10] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:23:36 [http-nio-8080-exec-10] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:23:36 [http-nio-8080-exec-10] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:23:36 [http-nio-8080-exec-10] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:23:36 [http-nio-8080-exec-10] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:36 [http-nio-8080-exec-10] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:36 [http-nio-8080-exec-1] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:23:36 [http-nio-8080-exec-1] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:23:36 [http-nio-8080-exec-1] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:23:36 [http-nio-8080-exec-1] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:23:36 [http-nio-8080-exec-1] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:23:36 [http-nio-8080-exec-1] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:36 [http-nio-8080-exec-1] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:37 [http-nio-8080-exec-2] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:23:37 [http-nio-8080-exec-2] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:23:37 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:23:37 [http-nio-8080-exec-2] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:23:37 [http-nio-8080-exec-2] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:23:37 [http-nio-8080-exec-2] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:37 [http-nio-8080-exec-2] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:38 [http-nio-8080-exec-3] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:23:38 [http-nio-8080-exec-3] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:23:38 [http-nio-8080-exec-3] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:23:38 [http-nio-8080-exec-3] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:23:38 [http-nio-8080-exec-3] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:23:38 [http-nio-8080-exec-3] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:38 [http-nio-8080-exec-3] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:39 [http-nio-8080-exec-4] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:23:39 [http-nio-8080-exec-4] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:23:39 [http-nio-8080-exec-4] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:23:39 [http-nio-8080-exec-4] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:23:39 [http-nio-8080-exec-4] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:23:39 [http-nio-8080-exec-4] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:39 [http-nio-8080-exec-4] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:39 [http-nio-8080-exec-5] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:23:39 [http-nio-8080-exec-5] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:23:39 [http-nio-8080-exec-5] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:23:39 [http-nio-8080-exec-5] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:23:39 [http-nio-8080-exec-5] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:23:39 [http-nio-8080-exec-5] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:39 [http-nio-8080-exec-5] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:40 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:23:40 [http-nio-8080-exec-7] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:23:40 [http-nio-8080-exec-7] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:23:40 [http-nio-8080-exec-7] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:23:40 [http-nio-8080-exec-7] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:23:40 [http-nio-8080-exec-7] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:23:40 [http-nio-8080-exec-7] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:40 [http-nio-8080-exec-7] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:41 [http-nio-8080-exec-8] INFO  o.e.c.EmployeeGatewayController - Getting employee with ID: 17
+2025-01-07 15:23:41 [http-nio-8080-exec-8] DEBUG o.example.service.RedisCacheService - Attempting to get employee from cache with key: employee:17
+2025-01-07 15:23:41 [http-nio-8080-exec-8] DEBUG o.s.d.r.core.RedisConnectionUtils - Fetching Redis Connection from RedisConnectionFactory
+2025-01-07 15:23:41 [http-nio-8080-exec-8] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+2025-01-07 15:23:41 [http-nio-8080-exec-8] INFO  o.example.service.RedisCacheService - CACHE HIT - Successfully retrieved employee ID: 17 from Redis cache
+2025-01-07 15:23:41 [http-nio-8080-exec-8] DEBUG o.example.service.RedisCacheService - Raw cached value: {id=17, name=Гоша, position=Крановщик, salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:41 [http-nio-8080-exec-8] DEBUG o.example.service.RedisCacheService - Deserialized employee: EmployeeDto{id=17, name='Гоша', position='Крановщик', salary=155000.75, hireDate=2023-01-01}
+2025-01-07 15:23:45 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:23:50 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:23:55 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:23:59 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:24:04 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:24:09 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:24:14 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:24:19 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:24:24 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:24:28 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:24:33 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:24:38 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:24:43 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:24:48 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:24:53 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:24:57 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:25:02 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:25:07 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:25:12 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:25:17 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:25:22 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:25:26 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:25:31 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:25:36 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:25:41 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:25:46 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:25:51 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:25:56 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:26:01 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:26:06 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:26:11 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:26:16 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:26:21 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:26:25 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:26:30 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:26:35 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:26:40 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:26:45 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:26:50 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:26:54 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:26:59 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:27:04 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:27:09 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:27:14 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:27:19 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:27:19 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:27:23 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:27:28 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:27:33 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:27:38 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:27:43 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:27:48 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:27:52 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:27:57 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:28:02 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:28:07 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:28:12 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:28:17 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:28:21 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:28:26 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:28:31 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:28:33 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:28:36 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:28:41 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:28:46 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:28:51 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:28:56 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:29:01 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:29:06 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:29:11 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:29:16 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:29:20 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:29:25 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:29:30 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 15:29:35 [SpringApplicationShutdownHook] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Stopped RedisMessageListenerContainer
+2025-01-07 22:53:11 [main] INFO  o.example.GatewayServiceApplication - Starting GatewayServiceApplication using Java 17.0.2 with PID 1 (/app/app.jar started by root in /app)
+2025-01-07 22:53:11 [main] DEBUG o.example.GatewayServiceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-01-07 22:53:11 [main] INFO  o.example.GatewayServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-07 22:53:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-07 22:53:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-07 22:53:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 0 Redis repository interfaces.
+2025-01-07 22:53:15 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-01-07 22:53:15 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-01-07 22:53:15 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-01-07 22:53:15 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-01-07 22:53:15 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4037 ms
+2025-01-07 22:53:17 [main] DEBUG i.m.c.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+2025-01-07 22:53:20 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Starting RedisMessageListenerContainer...
+2025-01-07 22:53:20 [main] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Postpone listening for Redis messages until actual listeners are added
+2025-01-07 22:53:20 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-01-07 22:53:20 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-01-07 22:53:20 [main] INFO  o.example.GatewayServiceApplication - Started GatewayServiceApplication in 10.974 seconds (process running for 12.987)
+2025-01-07 22:53:21 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-07 22:53:21 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-01-07 22:53:21 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-01-07 22:53:21 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:53:26 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:53:31 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:53:36 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:53:41 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:53:46 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:53:51 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:53:56 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:54:01 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:54:06 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:54:11 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:54:16 [http-nio-8080-exec-2] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:54:21 [http-nio-8080-exec-3] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:54:26 [http-nio-8080-exec-4] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:54:31 [http-nio-8080-exec-5] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:54:36 [http-nio-8080-exec-6] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:54:41 [http-nio-8080-exec-7] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:54:46 [http-nio-8080-exec-8] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:54:51 [http-nio-8080-exec-9] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:54:56 [http-nio-8080-exec-10] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:55:01 [http-nio-8080-exec-1] DEBUG o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping - Mapped to Actuator web endpoint 'prometheus'
+2025-01-07 22:55:02 [SpringApplicationShutdownHook] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Stopped RedisMessageListenerContainer
