@@ -34,7 +34,7 @@ public class RabbitMQListener {
         System.out.println("Received message: " + message);
 
         // Добавляем задержку в 20 секунд перед обработкой сообщения
-        Thread.sleep(20000);
+        Thread.sleep(10000);
 
         processMessage(message);
     }
