@@ -20,14 +20,15 @@ public class RabbitMQListener {
     }
 
     // Вариант 1: Базовый вариант без задержки
-    /*
+
     @RabbitListener(queues = "employeeQueue")
     public void handleMessage(String message) {
         System.out.println("Received message: " + message);
         processMessage(message);
     }
-    */
 
+
+    /*
     // Вариант 2: С задержкой в 10 секунд
     @RabbitListener(queues = "employeeQueue")
     public void handleMessage(String message) throws InterruptedException {
@@ -38,8 +39,9 @@ public class RabbitMQListener {
 
         processMessage(message);
     }
+    */
 
-    // Общий метод для обработки сообщений
+
     private void processMessage(String message) {
         String[] parts = message.split(":");
         String operation = parts[0];

@@ -30,11 +30,11 @@ public class EmployeeGatewayController {
 
     @GetMapping("/{id}")
     public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable Long id) {
-        log.info("Getting employee with ID: {}", id);
+        log.info("Получение сотрудника с ID: {}", id);
 
         EmployeeDto cachedEmployee = cacheService.getCachedEmployee(id);
         if (cachedEmployee != null) {
-            log.debug("Cache hit for employee ID: {}", id);
+            log.debug("Найдено в кэше для сотрудника с ID:  {}", id);
             return ResponseEntity.ok(cachedEmployee);
         }
 
@@ -48,60 +48,60 @@ public class EmployeeGatewayController {
 
     @GetMapping
     public ResponseEntity<List<EmployeeDto>> getAllEmployees() {
-        log.info("Request to get all employees");
+        log.info("Запрос на получение всех сотрудников");
 
         List<EmployeeDto> cachedEmployees = cacheService.getCachedAllEmployees();
         if (!cachedEmployees.isEmpty()) {
-            log.info("Returning {} employees from cache", cachedEmployees.size());
+            log.info("Возвращаем {} сотрудников из кэша", cachedEmployees.size());
             return ResponseEntity.ok(cachedEmployees);
         }
 
         List<EmployeeDto> employees = employeeGrpcClient.getAllEmployees();
         if (employees.isEmpty()) {
-            log.warn("No employees found from gRPC");
+            log.warn("Сотрудники не найдены через gRPC");
             return ResponseEntity.noContent().build();
         }
 
         cacheService.cacheAllEmployees(employees);
-        log.info("Caching {} employees retrieved from gRPC", employees.size());
+        log.info("Кэширование {} сотрудников, полученных через gRPC", employees.size());
         return ResponseEntity.ok(employees);
     }
 
 
     @PostMapping
     public ResponseEntity<String> createEmployee(@RequestBody NewEmployeeRequest request) {
-        log.info("Creating new employee: {}", request.getName());
+        log.info("Создание нового сотрудника: {}", request.getName());
 
         String message = String.format("CREATE:%s,%s,%f,%s",
                 request.getName(), request.getPosition(),
                 request.getSalary(), request.getHireDate());
         rabbitMQSender.sendMessage(message);
         cacheService.evictAllEmployees();
-        log.info("Employee creation request sent to RabbitMQ and cache invalidated");
-        return ResponseEntity.accepted().body("Create employee request accepted");
+        log.info("Запрос на создание сотрудника отправлен в RabbitMQ и кэш очищен");
+        return ResponseEntity.accepted().body("Запрос на создание сотрудника принят");
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<String> updateEmployee(@PathVariable Long id, @RequestBody NewEmployeeRequest request) {
-        log.info("Updating employee with ID: {}", id);
+        log.info("Обновление сотрудника с ID: {}", id);
 
         String message = String.format("UPDATE:%d,%s,%s,%f,%s",
                 id, request.getName(), request.getPosition(),
                 request.getSalary(), request.getHireDate());
         rabbitMQSender.sendMessage(message);
         cacheService.evictEmployee(id);
-        log.info("Employee update request sent to RabbitMQ and cache invalidated for ID {}", id);
-        return ResponseEntity.accepted().body("Update employee request accepted");
+        log.info("Запрос на обновление сотрудника отправлен в RabbitMQ и кэш очищен для ID {}", id);
+        return ResponseEntity.accepted().body("Запрос на обновление сотрудника принят");
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteEmployee(@PathVariable Long id) {
-        log.info("Deleting employee with ID: {}", id);
+        log.info("Удаление сотрудника с ID:  {}", id);
 
         String message = String.format("DELETE:%d", id);
         rabbitMQSender.sendMessage(message);
         cacheService.evictEmployee(id);
-        log.info("Employee deletion request sent to RabbitMQ and cache invalidated for ID {}", id);
-        return ResponseEntity.accepted().body("Delete employee request accepted");
+        log.info("Запрос на удаление сотрудника отправлен в RabbitMQ и кэш очищен для ID {}", id);
+        return ResponseEntity.accepted().body("Запрос на удаление сотрудника принят");
     }
 }

@@ -33,113 +33,113 @@ public class RedisCacheService {
 
     public EmployeeDto getCachedEmployee(Long employeeId) {
         String key = EMPLOYEE_CACHE_KEY_PREFIX + employeeId;
-        log.debug("Attempting to get employee from cache with key: {}", key);
+        log.debug("Попытка получить сотрудника из кэша по ключу: {}", key);
 
         try {
             Object cachedEmployee = employeeRedisTemplate.opsForValue().get(key);
             if (cachedEmployee != null) {
-                log.info("CACHE HIT - Successfully retrieved employee ID: {} from Redis cache", employeeId);
-                log.debug("Raw cached value: {}", cachedEmployee);
+                log.info("КЭШ НАЙДЕН - Успешно получен сотрудник с ID: {} из кэша Redis", employeeId);
+                log.debug("Необработанное значение из кэша: {}", cachedEmployee);
                 EmployeeDto employee = objectMapper.convertValue(cachedEmployee, EmployeeDto.class);
-                log.debug("Deserialized employee: {}", employee);
+                log.debug("Десериализованный сотрудник: {}", employee);
                 return employee;
             }
-            log.info("CACHE MISS - Employee ID: {} not found in Redis cache", employeeId);
+            log.info("КЭШ ПРОПУЩЕН - Сотрудник с ID: {} не найден в кэше Redis", employeeId);
         } catch (Exception e) {
-            log.error("Error fetching employee ID: {} from cache: {}", employeeId, e.getMessage());
-            log.debug("Error details:", e);
+            log.error("Ошибка при получении сотрудника с ID: {} из кэша: {}", employeeId, e.getMessage());
+            log.debug("Детали ошибки:", e);
         }
         return null;
     }
 
     public void cacheEmployee(Long id, EmployeeDto employee) {
         String key = EMPLOYEE_CACHE_KEY_PREFIX + id;
-        log.debug("Attempting to cache employee with key: {}", key);
+        log.debug("Попытка кэширования сотрудника с ключом: {}", key);
 
         try {
             employeeRedisTemplate.opsForValue().set(key, employee, CACHE_TTL_HOURS, TimeUnit.HOURS);
-            log.info("CACHE UPDATE - Successfully cached employee ID: {} in Redis", id);
-            log.debug("Cached employee details: {}", employee);
-            log.debug("Cache TTL set to {} hours", CACHE_TTL_HOURS);
+            log.info("КЭШ ОБНОВЛЕН - Успешно кэширован сотрудник с ID: {} в Redis", id);
+            log.debug("Детали кэшированного сотрудника: {}", employee);
+            log.debug("Время жизни кэша установлено на {} часов", CACHE_TTL_HOURS);
 
-            log.debug("Initiating update of all employees cache after individual employee cache");
+            log.debug("Инициация обновления кэша всех сотрудников после кэширования отдельного сотрудника");
             updateAllEmployeesCache();
-            log.info("Cache operations completed for employee ID: {}", id);
+            log.info("Операции кэширования завершены для сотрудника с ID: {}", id);
         } catch (Exception e) {
-            log.error("Error while caching employee ID: {}: {}", id, e.getMessage());
-            log.debug("Error details:", e);
+            log.error("Ошибка при кэшировании сотрудника с ID: {}: {}", id, e.getMessage());
+            log.debug("Детали ошибки:", e);
         }
     }
 
 
     public List<EmployeeDto> getCachedAllEmployees() {
-        log.debug("Attempting to get all employees from cache");
+        log.debug("Попытка получить всех сотрудников из кэша");
         try {
             Object cachedEmployees = employeeListRedisTemplate.opsForValue().get(ALL_EMPLOYEES_CACHE_KEY);
 
             if (cachedEmployees != null) {
                 List<EmployeeDto> employees = (List<EmployeeDto>) cachedEmployees;
-                log.info("CACHE HIT - Retrieved all employees from Redis cache. Count: {}", employees.size());
+                log.info("КЭШ НАЙДЕН - Получены все сотрудники из кэша Redis. Количество: {}", employees.size());
                 return employees;
             }
         } catch (Exception e) {
-            log.error("Error fetching all employees from cache", e);
+            log.error("Ошибка при получении всех сотрудников из кэша", e);
         }
-        log.warn("CACHE MISS - No employees found in Redis cache");
+        log.warn("КЭШ ПРОПУЩЕН - Сотрудники не найдены в кэше Redis");
         return Collections.emptyList();
     }
 
 
     public void cacheAllEmployees(List<EmployeeDto> employees) {
-        log.debug("Attempting to cache all employees list");
+        log.debug("Попытка кэширования списка всех сотрудников");
         try {
             if (employees == null || employees.isEmpty()) {
-                log.warn("Cannot cache empty or null employees list");
+                log.warn("Невозможно кэшировать пустой или null список сотрудников");
                 return;
             }
 
             employeeListRedisTemplate.opsForValue().set(ALL_EMPLOYEES_CACHE_KEY, employees, 1, TimeUnit.HOURS);
-            log.info("CACHE UPDATE - Successfully cached {} employees in Redis", employees.size());
-            log.debug("Cached employees: {}", employees);
+            log.info("КЭШ ОБНОВЛЕН - Успешно кэшировано {} сотрудников в Redis", employees.size());
+            log.debug("Кэшированные сотрудники: {}", employees);
         } catch (Exception e) {
-            log.error("Error caching all employees", e);
+            log.error("Ошибка при кэшировании всех сотрудников", e);
         }
     }
 
 
     public void evictEmployee(Long id) {
         String key = EMPLOYEE_CACHE_KEY_PREFIX + id;
-        log.debug("Attempting to evict employee from cache, key: {}", key);
+        log.debug("Попытка удаления сотрудника из кэша, ключ: {}", key);
 
         try {
             Boolean deleted = employeeRedisTemplate.delete(key);
             if (Boolean.TRUE.equals(deleted)) {
-                log.info("CACHE EVICT - Successfully removed employee ID: {} from Redis cache", id);
+                log.info("КЭШ УДАЛЕН - Успешно удален сотрудник с ID: {} из кэша Redis", id);
             } else {
-                log.info("CACHE MISS - No cache entry found for employee ID: {}", id);
+                log.info("КЭШ ПРОПУЩЕН - Запись в кэше не найдена для сотрудника с ID: {}", id);
             }
 
-            log.debug("Initiating eviction of all employees cache");
+            log.debug("Инициация удаления кэша всех сотрудников");
             evictAllEmployees();
-            log.info("Cache eviction operations completed for employee ID: {}", id);
+            log.info("Операции удаления кэша завершены для сотрудника с ID: {}", id);
         } catch (Exception e) {
-            log.error("Error evicting employee ID: {} from cache: {}", id, e.getMessage());
-            log.debug("Error details:", e);
+            log.error("Ошибка при удалении сотрудника с ID: {} из кэша: {}", id, e.getMessage());
+            log.debug("Детали ошибки:", e);
         }
     }
 
     public void evictAllEmployees() {
-        log.debug("Attempting to evict all employees from cache");
+        log.debug("Попытка удаления всех сотрудников из кэша");
         try {
             Boolean deleted = employeeListRedisTemplate.delete(ALL_EMPLOYEES_CACHE_KEY);
             if (Boolean.TRUE.equals(deleted)) {
-                log.info("CACHE EVICT - Successfully removed all employees from Redis cache");
+                log.info("КЭШ УДАЛЕН - Успешно удалены все сотрудники из кэша Redis");
             } else {
-                log.info("CACHE MISS - No cache entry found for all employees");
+                log.info("КЭШ ПРОПУЩЕН - Записи в кэше не найдены для всех сотрудников");
             }
         } catch (Exception e) {
-            log.error("Error evicting all employees cache: {}", e.getMessage());
-            log.debug("Error details:", e);
+            log.error("Ошибка при удалении кэша всех сотрудников: {}", e.getMessage());
+            log.debug("Детали ошибки:", e);
         }
     }
     private void updateAllEmployeesCache() {

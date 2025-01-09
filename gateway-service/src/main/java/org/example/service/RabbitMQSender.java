@@ -23,12 +23,12 @@ public class RabbitMQSender {
     }
 
     public void sendMessage(Object message) {
-        log.info("Sending message to RabbitMQ: {}", message);
+        log.info("Отправка сообщения в RabbitMQ: {}", message);
         try {
             rabbitTemplate.convertAndSend(exchange, routingKey, message);
-            log.debug("Message sent successfully");
+            log.debug("Сообщение успешно отправлено");
         } catch (Exception e) {
-            log.error("Error sending message to RabbitMQ: {}", e.getMessage(), e);
+            log.error("Ошибка при отправке сообщения в RabbitMQ: {}", e.getMessage(), e);
         }
     }
 }

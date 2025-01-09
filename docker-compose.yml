@@ -1,7 +1,6 @@
 version: '3.9'
 
 services:
-  # Gateway Service
   gateway-service:
     build:
       context: ./gateway-service
@@ -13,7 +12,7 @@ services:
       - domain-service
       - rabbitmq
       - redis
-      - logstash  # Добавляем зависимость от logstash
+      - logstash
     environment:
       - grpc.server.host=domain-service
       - grpc.server.port=9091
@@ -36,7 +35,6 @@ services:
       timeout: 3s
       retries: 3
 
-  # OpenSearch (заменяет Elasticsearch)
   opensearch:
     image: opensearchproject/opensearch:2.10.0
     container_name: opensearch
@@ -44,7 +42,7 @@ services:
       - discovery.type=single-node
       - bootstrap.memory_lock=true
       - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
-      - "DISABLE_SECURITY_PLUGIN=true"  # Для удобства разработки
+      - "DISABLE_SECURITY_PLUGIN=true"
       - "DISABLE_INSTALL_DEMO_CONFIG=true"
     ulimits:
       memlock:
@@ -63,7 +61,6 @@ services:
       timeout: 30s
       retries: 3
 
-  # Logstash
   logstash:
     image: opensearchproject/logstash-oss-with-opensearch-output-plugin:latest
     container_name: logstash
@@ -84,7 +81,6 @@ services:
     depends_on:
       - opensearch
 
-  # Kibana (OpenSearch Dashboards)
   kibana:
     image: opensearchproject/opensearch-dashboards:2.10.0
     container_name: kibana
@@ -92,13 +88,12 @@ services:
       - "5601:5601"
     environment:
       - 'OPENSEARCH_HOSTS=["http://opensearch:9200"]'
-      - "DISABLE_SECURITY_DASHBOARDS_PLUGIN=true"  # Для удобства разработки
+      - "DISABLE_SECURITY_DASHBOARDS_PLUGIN=true"
     networks:
       - app-network
     depends_on:
       - opensearch
 
-  # Domain Service
   domain-service:
     build:
       context: ./domain-service
@@ -123,7 +118,6 @@ services:
     networks:
       - app-network
 
-  # Redis Service
   redis:
     image: redis:latest
     container_name: redis
@@ -139,7 +133,6 @@ services:
       timeout: 5s
       retries: 5
 
-  # RabbitMQ Service
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
@@ -157,7 +150,6 @@ services:
       timeout: 5s
       retries: 5
 
-  # PostgreSQL
   postgres:
     image: postgres:latest
     container_name: postgres
@@ -177,7 +169,6 @@ services:
       timeout: 5s
       retries: 5
 
-  # pgAdmin
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin
@@ -190,7 +181,7 @@ services:
       - postgres
     networks:
       - app-network
-  # Prometheus
+
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
@@ -202,7 +193,6 @@ services:
       - app-network
     restart: always
 
-  # Grafana
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
